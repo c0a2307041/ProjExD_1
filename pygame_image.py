@@ -11,7 +11,8 @@ def main():
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
     img = pg.image.load("fig/3.png")
-    screen.blit(img,[300,200])
+    kk_img = pg.image.load("fig/3.png")
+    kk_img = pg.transform.flip(kk_img,True,False)
     pg.display.update()
     tmr = 0
     while True:
@@ -19,6 +20,7 @@ def main():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0])
+        screen.blit(kk_img,[300,200])
         pg.display.update()
         tmr += 1        
         clock.tick(10)
